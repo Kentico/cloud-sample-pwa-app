@@ -51,7 +51,6 @@
                 }
             } else {
                 // TODO: handle other states
-
             }
         };
         request.open('GET', url);
