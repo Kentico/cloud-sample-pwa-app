@@ -3,6 +3,16 @@ Color palette
 https://material.io/color/#!/?view.left=0&view.right=0&primary.color=1565C0&secondary.color=263238 
 */
 
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('fonts/RobotoMedium.eot');
+  src: url('fonts/RobotoMedium.eot') format('embedded-opentype'),
+       url('fonts/RobotoMedium.woff2') format('woff2'),
+       url('fonts/RobotoMedium.woff') format('woff'),
+       url('fonts/RobotoMedium.ttf') format('truetype'),
+       url('fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+  
 * {
   box-sizing: border-box;
 }
@@ -12,7 +22,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Helvetica', 'Verdana', sans-serif;
+  font-family: 'RobotoMedium', 'Helvetica', 'Verdana', sans-serif;
   font-weight: 400;
   font-display: optional;
   color: #ffffff;
@@ -48,7 +58,7 @@ body {
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  background: #e1e2e1;
+  background: #e1e2e1;  
 }
 
 .header {
@@ -126,34 +136,32 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
- 
- #bounce>div {
+
+#bounce>div {
   width: 18px;
   height: 18px;
   background-color: #263238;
   border-radius: 100%;
   display: inline-block;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
- }
- 
- #bounce .bounce1 {
+}
+
+#bounce .bounce1 {
   animation-delay: -0.32s;
- }
- 
- #bounce .bounce2 {
+}
+
+#bounce .bounce2 {
   animation-delay: -0.16s;
- }
- 
- @keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-   transform: scale(0);
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
   }
   40% {
-   transform: scale(1.0);
+    transform: scale(1.0);
   }
- }
+}
 
 .main {
   padding-top: 60px;
@@ -164,4 +172,15 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  padding: 16px;
+  position: relative;
+  box-sizing: border-box;
+  background: #f5f5f6;
+  border-radius: 2px;
+  margin: 16px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #263238;
 }
