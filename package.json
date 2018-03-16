@@ -1,5 +1,6 @@
 {
   "name": "travel-pwa-app",
+  "private": true,
   "version": "1.0.0",
   "description": "Traveling application using to serve interesting places around you.",
   "main": "index.js",
@@ -13,7 +14,7 @@
     "url": "git+https://github.com/Kentico/travel-pwa-app.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Kentico/travel-pwa-app/issues"
   },
@@ -28,5 +29,8 @@
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "kentico-cloud-delivery-typescript-sdk": "^2.6.0"
   }
 }
