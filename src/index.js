@@ -39,6 +39,23 @@
 
     app.getPointsOfInterest = function () {
         var url = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items?system.type=point_of_interest'
+        if ('caches' in window) {
+            /*
+             * Check if the service worker has already cached this data about the Point of interests
+             * data. If the service worker has the data, then display the cached
+             * data while the app fetches the latest data.
+             */
+            caches.match(url).then(function (response) {
+                if (response) {
+                    response.json()
+                        .then(function updateFromCache(json) {
+                            json.items.forEach(function (pointOfInterest) {
+                                app.updatePointOfInterestCard(pointOfInterest);
+                            })
+                        });
+                }
+            });
+        }
 
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -58,4 +75,9 @@
     }
 
     app.getPointsOfInterest();
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(function () { console.log('Service Worker Registered'); });
+    }
 })();
