@@ -4,3 +4,6 @@ firebase.json
 
 # node modules
 node_modules
+
+# distribution folder
+/dist
