@@ -1,5 +1,5 @@
 # travel-pwa-app
-Traveling application using to serve interesting places around you. 
+Travel application featuring various points of interests around you.
 
 This app is implemented as a proof of concept that Kentico Cloud is able to serve content  for PWA application.
 
