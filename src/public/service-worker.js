@@ -1,5 +1,5 @@
-var dataCacheName = 'travelAppData-v0.1';
-var cacheName = 'travelApp-v0.1';
+var dataCacheName = 'travelAppData-v0.2';
+var cacheName = 'travelApp-v0.2';
 
 var filesToCache = [
   '/',
@@ -52,7 +52,7 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('fetch', function (e) {
   console.log('[Service Worker] Fetch', e.request.url);
-  var dataUrl = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797';
+  var dataUrl = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items';
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh
