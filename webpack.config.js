@@ -6,7 +6,10 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [
+                    /node_modules/,
+                    path.resolve(__dirname, "/src/public/")
+                ],
                 use: {
                     loader: "babel-loader"
                 }
@@ -19,17 +22,6 @@ module.exports = {
                         options: { minimize: false }
                     }
                 ]
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-                loader: 'file-loader',
-                options: {
-                    limit: 10000
-                }
             }
         ]
     },
@@ -39,7 +31,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/public/index.html",
+            template: "./src/index.html",
             filename: "./index.html"
         })
     ]

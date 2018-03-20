@@ -5,6 +5,7 @@ var filesToCache = [
   '/',
   '/index.html',
   '/main.js',
+  '/manifest.json',
   '/styles/fonts/RobotoMedium.eot',
   '/styles/fonts/RobotoMedium.svg',
   '/styles/fonts/RobotoMedium.ttf',

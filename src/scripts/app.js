@@ -6,12 +6,7 @@ const container = document.querySelector('.main');
 let isLoading = true;
 let visibleCards = {};
 
-const updatePointOfInterestCard = (data) => {
-    const key = data.system.id;
-    const title = data.title.value;
-    const content = data.description.value;
-    const latitude = data.latitude__decimal_degrees_ && data.latitude__decimal_degrees_.value;
-    const longitude = data.longitude__decimal_degrees_ && data.longitude__decimal_degrees_.value;
+const updatePointOfInterestCard = (key, title, content, latitude, longitude) => {
 
     let card = visibleCards[key];
     if (!card) {
@@ -47,10 +42,17 @@ const getPointsOfInterest = () => {
          */
         caches.match(url).then(function (response) {
             if (response) {
+                debugger;
                 response.json()
                     .then(function updateFromCache(json) {
-                        json.items.forEach(function (pointOfInterest) {
-                            updatePointOfInterestCard(pointOfInterest);
+                        json.items.forEach(function (pointOfInterest) {                            
+                            updatePointOfInterestCard(
+                                pointOfInterest.system.id,
+                                pointOfInterest.elements.title.value,
+                                pointOfInterest.elements.description.value,
+                                pointOfInterest.elements.latitude__decimal_degrees_ && pointOfInterest.elements.latitude__decimal_degrees_.value,
+                                pointOfInterest.elements.longitude__decimal_degrees_ && pointOfInterest.elements.longitude__decimal_degrees_.value
+                            );
                         })
                     });
             }
@@ -62,8 +64,15 @@ const getPointsOfInterest = () => {
         .get()
         .toPromise()
         .then(response => 
-            response.items.forEach(pointOfInterest => 
-                updatePointOfInterestCard(pointOfInterest)))
+            response.items.forEach(pointOfInterest => {
+                debugger;
+                updatePointOfInterestCard(
+                    pointOfInterest.system.id,
+                    pointOfInterest.title.value,
+                    pointOfInterest.description.value,
+                    pointOfInterest.latitude__decimal_degrees_ && pointOfInterest.latitude__decimal_degrees_.value,
+                    pointOfInterest.longitude__decimal_degrees_ && pointOfInterest.longitude__decimal_degrees_.value
+                )}))
 }
 
 module.exports = {

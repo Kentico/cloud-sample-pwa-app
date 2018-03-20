@@ -1,5 +1,3 @@
-import './styles/style.css';
-
 import { getPointsOfInterest } from './scripts/app';
 
 document.getElementById('butRefresh').addEventListener('click', function () {
