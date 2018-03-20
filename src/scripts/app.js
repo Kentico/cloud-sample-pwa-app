@@ -1,12 +1,20 @@
 import { client } from './client';
+import { ResponseMapService, BaseResponse } from 'kentico-cloud-delivery-typescript-sdk';
 
+const responseMapService = new ResponseMapService(client.config);
 const loader = document.querySelector('.loader');
 const cardTemplate = document.querySelector('.cardTemplate');
 const container = document.querySelector('.main');
 let isLoading = true;
 let visibleCards = {};
 
-const updatePointOfInterestCard = (key, title, content, latitude, longitude) => {
+const updatePointOfInterestCard = (data) => {
+    const key = data.system.id;
+    const title = data.title.value;
+    const content = data.description.value;
+    const latitude = data.latitude__decimal_degrees_ && data.latitude__decimal_degrees_.value;
+    const longitude = data.longitude__decimal_degrees_ && data.longitude__decimal_degrees_.value;
+
 
     let card = visibleCards[key];
     if (!card) {
@@ -19,10 +27,9 @@ const updatePointOfInterestCard = (key, title, content, latitude, longitude) => 
 
     card.querySelector('.title').textContent = title;
     card.querySelector('.content').innerHTML = content;
-    if(latitude && longitude)
-    {
+    if (latitude && longitude) {
         card.querySelector('.map-link').setAttribute('href', `http://maps.google.com/?ie=UTF8&hq=&ll=${latitude},${longitude}&z=16`)
-        card.querySelector('.map-link').removeAttribute('hidden');                
+        card.querySelector('.map-link').removeAttribute('hidden');
     }
 
     if (isLoading) {
@@ -40,39 +47,27 @@ const getPointsOfInterest = () => {
          * data. If the service worker has the data, then display the cached
          * data while the app fetches the latest data.
          */
-        caches.match(url).then(function (response) {
-            if (response) {
-                debugger;
-                response.json()
-                    .then(function updateFromCache(json) {
-                        json.items.forEach(function (pointOfInterest) {                            
-                            updatePointOfInterestCard(
-                                pointOfInterest.system.id,
-                                pointOfInterest.elements.title.value,
-                                pointOfInterest.elements.description.value,
-                                pointOfInterest.elements.latitude__decimal_degrees_ && pointOfInterest.elements.latitude__decimal_degrees_.value,
-                                pointOfInterest.elements.longitude__decimal_degrees_ && pointOfInterest.elements.longitude__decimal_degrees_.value
-                            );
-                        })
-                    });
-            }
-        });
+        caches.match(url).then(response =>
+            response && response
+                .json()
+                .then(json => {
+                    const typedResponse = new BaseResponse(json, response);
+                    responseMapService
+                        .mapMultipleResponse(typedResponse, client.config)
+                        .items.forEach(pointOfInterest =>
+                            updatePointOfInterestCard(pointOfInterest))
+                })
+        );
     }
 
     client.items()
         .type('point_of_interest')
         .get()
         .toPromise()
-        .then(response => 
+        .then(response =>
             response.items.forEach(pointOfInterest => {
-                debugger;
-                updatePointOfInterestCard(
-                    pointOfInterest.system.id,
-                    pointOfInterest.title.value,
-                    pointOfInterest.description.value,
-                    pointOfInterest.latitude__decimal_degrees_ && pointOfInterest.latitude__decimal_degrees_.value,
-                    pointOfInterest.longitude__decimal_degrees_ && pointOfInterest.longitude__decimal_degrees_.value
-                )}))
+                updatePointOfInterestCard(pointOfInterest);
+            }))
 }
 
 module.exports = {
