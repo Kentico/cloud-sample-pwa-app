@@ -1,5 +1,5 @@
-var dataCacheName = 'travelAppData-v1';
-var cacheName = 'travelApp-v1';
+var dataCacheName = 'travelAppData-v0.1';
+var cacheName = 'travelApp-v0.1';
 
 var filesToCache = [
   '/',

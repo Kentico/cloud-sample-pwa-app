@@ -10,6 +10,8 @@ const updatePointOfInterestCard = (data) => {
     const key = data.system.id;
     const title = data.title.value;
     const content = data.description.value;
+    const latitude = data.latitude__decimal_degrees_ && data.latitude__decimal_degrees_.value;
+    const longitude = data.longitude__decimal_degrees_ && data.longitude__decimal_degrees_.value;
 
     let card = visibleCards[key];
     if (!card) {
@@ -22,6 +24,11 @@ const updatePointOfInterestCard = (data) => {
 
     card.querySelector('.title').textContent = title;
     card.querySelector('.content').innerHTML = content;
+    if(latitude && longitude)
+    {
+        card.querySelector('.map-link').setAttribute('href', `http://maps.google.com/?ie=UTF8&hq=&ll=${latitude},${longitude}&z=16`)
+        card.querySelector('.map-link').removeAttribute('hidden');                
+    }
 
     if (isLoading) {
         loader.setAttribute('hidden', true);
@@ -31,7 +38,7 @@ const updatePointOfInterestCard = (data) => {
 
 const getPointsOfInterest = () => {
 
-    const url = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items?system.type=point_of_interest'
+    const url = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items?system.type=point_of_interest';
     if ('caches' in window) {
         /*
          * Check if the service worker has already cached this data about the Point of interests
