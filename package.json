@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kentico/travel-pwa-app.git"
+    "url": "git+https://github.com/Kentico/cloud-sample-pwa-app.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kentico/travel-pwa-app/issues"
+    "url": "https://github.com/Kentico/cloud-sample-pwa-app/issues"
   },
-  "homepage": "https://github.com/Kentico/travel-pwa-app#readme",
+  "homepage": "https://github.com/Kentico/cloud-sample-pwa-app#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
