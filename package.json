@@ -1,8 +1,9 @@
 {
-  "name": "travel-pwa-app",
+  "name": "cloud-sample-pwa-app",
+  "displayName": "Pack and Go",
+  "description": "Travel application featuring various points of interests around you.",
   "private": true,
   "version": "1.0.0",
-  "description": "Traveling application using to serve interesting places around you.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
