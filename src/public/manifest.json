@@ -1,6 +1,6 @@
 {
-  "name": "Travel app",
-  "short_name": "travelapp",
+  "name": "Pack and Go",
+  "short_name": "packandgo",
   "theme_color": "#1564bf",
   "background_color": "#e1e2e1",
   "display": "standalone",

@@ -40,6 +40,7 @@ const updatePointOfInterestCard = (data) => {
 
 const getPointsOfInterest = () => {
 
+    // This approach is not a best practice. Caching best practices will be described in one of upcoming article.
     const url = 'https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items?system.type=point_of_interest';
     if ('caches' in window) {
         /*
