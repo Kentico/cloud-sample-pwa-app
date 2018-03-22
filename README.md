@@ -1,7 +1,7 @@
-# travel-pwa-app
+# Turtle (cloud-sample-pwa-app)
 Travel application featuring various points of interests around you.
 
-This app is implemented as a proof of concept that Kentico Cloud is able to serve content  for PWA application.
+Turtle app is implemented as a showcase of Kentico Cloud using the [progressive web app](https://developers.google.com/web/progressive-web-apps/) approach.
 
 ## Getting Started
 
