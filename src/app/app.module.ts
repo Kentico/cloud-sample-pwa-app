@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import 'hammerjs';
 
-import { DeliveryClientProvider } from './delivery-client.provider';
+import { DeliveryClientProvider } from './setup/delivery-client.provider';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';

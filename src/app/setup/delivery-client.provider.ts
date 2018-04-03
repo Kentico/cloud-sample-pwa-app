@@ -1,9 +1,9 @@
 import { DeliveryClient, DeliveryClientConfig, TypeResolver } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
 
-import { PointOfInterest } from './models/point_of_interest';
-import { Event } from './models/event';
-import { Tour } from './models/tour';
-import { Quest } from './models/quest';
+import { PointOfInterest } from '../models/point_of_interest';
+import { Event } from '../models/event';
+import { Tour } from '../models/tour';
+import { Quest } from '../models/quest';
 
 
 export const DeliveryClientFactory = (): DeliveryClient =>  {
