@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
+
 import 'hammerjs';
+
+import { DeliveryClientProvider } from './delivery-client.provider';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -29,7 +32,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
