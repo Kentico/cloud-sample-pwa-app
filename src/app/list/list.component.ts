@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DeliveryClient, ItemResponses } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { DeliveryClient, ItemResponses } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
 
 import { PointOfInterest } from '../models/point_of_interest';
 
@@ -11,9 +12,16 @@ import { PointOfInterest } from '../models/point_of_interest';
 })
 export class ListComponent implements OnInit, OnDestroy {
   dataSubscription: Subscription;
-  pointsOfInterest: []PointOfInterest;
+  pointsOfInterest: PointOfInterest[];
 
-  constructor(private deliveryClient: DeliveryClient) { }
+  constructor(
+    private deliveryClient: DeliveryClient,
+    private router: Router
+    ) { }
+
+  showPointOfInterest(pointOfInterest: PointOfInterest) {
+    this.router.navigate(['/poi', pointOfInterest.urlSlug.value]);
+  }
 
   ngOnInit() {
     this.dataSubscription = this.deliveryClient

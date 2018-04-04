@@ -7,7 +7,7 @@
     <mat-card-content innerHTML="{{poi.description.value}}">
     </mat-card-content>
     <mat-card-actions>
+        <button (click)="showPointOfInterest(poi)" mat-button><mat-icon>launch</mat-icon></button>
         <button mat-button><mat-icon>map</mat-icon></button>
-        <button mat-button><mat-icon>list</mat-icon></button>
     </mat-card-actions>
 </mat-card>

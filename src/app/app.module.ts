@@ -10,7 +10,6 @@ import { DeliveryClientProvider } from './setup/delivery-client.provider';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
-import { PointOfInterestCardComponent } from './point-of-interest-card/point-of-interest-card.component';
 import { PointOfInterestDetailComponent } from './point-of-interest-detail/point-of-interest-detail.component';
 
 const routes: Routes = [
@@ -22,7 +21,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ListComponent,
-    PointOfInterestCardComponent,
     PointOfInterestDetailComponent
   ],
   imports: [
