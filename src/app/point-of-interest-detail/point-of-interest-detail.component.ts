@@ -8,10 +8,10 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./point-of-interest-detail.component.scss']
 })
 export class PointOfInterestDetailComponent implements OnInit, OnDestroy {
+  routingSubscription: Subscription;
 
   constructor(private route: ActivatedRoute) { }
 
-  routingSubscription: Subscription;
   ngOnInit() {
     this.routingSubscription =
       this.route.params.subscribe(params => {

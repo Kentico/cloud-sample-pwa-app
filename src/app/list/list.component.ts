@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DeliveryClient } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { DeliveryClient, ItemResponses } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
+import { Subscription } from 'rxjs/Subscription';
 
 import { PointOfInterest } from '../models/point_of_interest';
 
@@ -8,17 +9,23 @@ import { PointOfInterest } from '../models/point_of_interest';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
+  dataSubscription: Subscription;
+  pointsOfInterest: [PointOfInterest];
 
   constructor(private deliveryClient: DeliveryClient) { }
 
   ngOnInit() {
-    this.deliveryClient
+    this.dataSubscription = this.deliveryClient
       .items<PointOfInterest>()
       .get()
-      .subscribe(response => {
-        console.log(response);
+      .subscribe((response: ItemResponses.DeliveryItemListingResponse<PointOfInterest>) => {
+        this.pointsOfInterest = response.items;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.dataSubscription.unsubscribe();
   }
 
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 
 import 'hammerjs';
@@ -29,8 +29,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
+
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]
