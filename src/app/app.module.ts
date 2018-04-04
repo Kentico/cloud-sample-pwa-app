@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import 'hammerjs';
 
 import { DeliveryClientProvider } from './setup/delivery-client.provider';
+import { GeolocationService } from './geolocation.service';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -33,7 +34,10 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule
   ],
-  providers: [DeliveryClientProvider],
+  providers: [
+    DeliveryClientProvider,
+    GeolocationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
