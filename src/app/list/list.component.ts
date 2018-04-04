@@ -11,7 +11,7 @@ import { PointOfInterest } from '../models/point_of_interest';
 })
 export class ListComponent implements OnInit, OnDestroy {
   dataSubscription: Subscription;
-  pointsOfInterest: [PointOfInterest];
+  pointsOfInterest: []PointOfInterest;
 
   constructor(private deliveryClient: DeliveryClient) { }
 
