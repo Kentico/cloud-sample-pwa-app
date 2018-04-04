@@ -1,5 +1,5 @@
 {
-    "name": "Pack and Go - Travel application featuring various points of interests around you.",
+    "name": "Pack and Go",
     "short_name": "Pack and Go",
     "theme_color": "#1565c0",
     "background_color": "#e1e2e1",
@@ -42,6 +42,5 @@
             "type": "image/png",
             "density": "4.0"
         }
-    ],
-    "splash_pages": null
+    ]
 }
