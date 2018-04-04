@@ -1,4 +1,4 @@
-import { DeliveryClient, DeliveryClientConfig, TypeResolver } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
+import { DeliveryClient, DeliveryClientConfig, TypeResolver } from 'kentico-cloud-delivery-typescript-sdk';
 
 import { PointOfInterest } from '../models/point_of_interest';
 import { Event } from '../models/event';

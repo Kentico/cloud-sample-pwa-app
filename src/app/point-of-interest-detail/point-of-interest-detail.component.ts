@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { DeliveryClient } from 'kentico-cloud-delivery-typescript-sdk/_bundles';
+import { DeliveryClient } from 'kentico-cloud-delivery-typescript-sdk';
 
 import { PointOfInterest } from '../models/point_of_interest';
 
