@@ -7,7 +7,6 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build --prod",
-        "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions"
