@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { environment } from '../environments/environment';
 
 import 'hammerjs';
@@ -32,6 +33,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
 
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+
+    NgxGalleryModule,
 
     MatToolbarModule,
     MatCardModule,

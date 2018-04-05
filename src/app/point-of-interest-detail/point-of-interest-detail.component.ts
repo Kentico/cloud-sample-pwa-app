@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { DeliveryClient } from 'kentico-cloud-delivery-typescript-sdk';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+
 
 import { PointOfInterest } from '../models/point_of_interest';
 
@@ -14,6 +16,8 @@ export class PointOfInterestDetailComponent implements OnInit, OnDestroy {
   routingSubscription: Subscription;
   dataSubscription: Subscription;
   pointOfInterest: PointOfInterest;
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +25,23 @@ export class PointOfInterestDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.galleryOptions = [
+      {
+        previewCloseOnClick: true,
+        previewCloseOnEsc: true,
+        previewZoom: true,
+        image: false,
+        thumbnailsRemainingCount: true,
+        height: '100px',
+        imageAnimation: NgxGalleryAnimation.Slide,
+        imageInfinityMove: true
+      },
+      {
+        breakpoint: 500,
+        width: '100%',
+        thumbnailsColumns: 2,
+      }
+    ];
     this.routingSubscription =
       this.route.params.subscribe(params => {
         if (params['id']) {
@@ -29,8 +50,17 @@ export class PointOfInterestDetailComponent implements OnInit, OnDestroy {
             .equalsFilter('elements.url_slug', params['id'])
             .get()
             .subscribe((response) => {
-              console.log(response.firstItem);
               this.pointOfInterest = response.firstItem;
+              if (response.firstItem.pictures.value) {
+                this.galleryImages = response.firstItem.pictures.value.map(picture => {
+                  return {
+                    small: picture.url,
+                    big: picture.url,
+                    medium: picture.url,
+                    url: picture.url
+                  };
+                });
+              }
             });
 
         }

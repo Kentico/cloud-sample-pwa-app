@@ -6,4 +6,7 @@
     </mat-card-header>
     <mat-card-content innerHTML="{{pointOfInterest.description.value}}">
     </mat-card-content>
+    <mat-card-content>
+        <ngx-gallery *ngIf="galleryImages" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </mat-card-content>
 </mat-card>
