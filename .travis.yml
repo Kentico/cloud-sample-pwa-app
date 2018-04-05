@@ -11,3 +11,5 @@ deploy:
   project: ./dist/
   domain: kentico-cloud-sample-pwa-app.surge.sh 
   skip_cleanup: true
+after_deploy:
+  - npm run lh --score=100 https://kentico-cloud-sample-pwa-app.surge.sh 

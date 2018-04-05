@@ -9,7 +9,8 @@
         "build": "ng build --prod",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions"
+        "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions",
+        "lh": "lighthouse-ci"
     },
     "repository": {
         "type": "git",
@@ -57,6 +58,7 @@
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
         "kentico-cloud-model-generator-utility": "^0.2.3",
+        "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
         "protractor": "~5.1.2",
         "ts-node": "~4.1.0",
         "tslint": "~5.9.1",
