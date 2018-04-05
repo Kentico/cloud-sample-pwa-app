@@ -27,14 +27,16 @@ export class PointOfInterestDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.galleryOptions = [
       {
+        image: false,
         previewCloseOnClick: true,
         previewCloseOnEsc: true,
         previewZoom: true,
-        image: false,
-        thumbnailsRemainingCount: true,
-        height: '100px',
+        previewInfinityMove : true,
         imageAnimation: NgxGalleryAnimation.Slide,
-        imageInfinityMove: true
+        imageSwipe: true,
+        imageArrowsAutoHide: true,
+        height: '100px',
+        thumbnailsRemainingCount: true
       },
       {
         breakpoint: 500,
