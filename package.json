@@ -9,7 +9,9 @@
         "build": "ng build --prod",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions"
+        "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions",
+        "deploy-surge": "npm run build && surge ./dist https://kentico-cloud-sample-pwa-app.surge.sh",
+        "lighthouse": "lighthouse --chrome-flags=\"--headless\" --quiet --output json https://kentico-cloud-sample-pwa-app.surge.sh"
     },
     "repository": {
         "type": "git",
@@ -57,7 +59,9 @@
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
         "kentico-cloud-model-generator-utility": "^0.2.3",
+        "lighthouse": "^2.9.4",
         "protractor": "~5.1.2",
+        "surge": "^0.20.1",
         "ts-node": "~4.1.0",
         "tslint": "~5.9.1",
         "typescript": "~2.5.3"
