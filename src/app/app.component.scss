@@ -8,3 +8,7 @@ mat-toolbar {
         text-decoration: none;
     }
 }
+
+mat-toolbar.grayscale {
+    filter: grayscale(1);
+}
