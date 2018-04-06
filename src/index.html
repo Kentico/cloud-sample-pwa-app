@@ -32,13 +32,58 @@
 
     <title>Pack and Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .loader {
+            left: 50%;
+            top: 50%;
+            position: fixed;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        #bounce>div {
+            width: 18px;
+            height: 18px;
+            background-color: #263238;
+            border-radius: 100%;
+            display: inline-block;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
+        
+        #bounce .bounce1 {
+            animation-delay: -0.32s;
+        }
+        
+        #bounce .bounce2 {
+            animation-delay: -0.16s;
+        }
+        
+        @keyframes sk-bouncedelay {
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1.0);
+            }
+        }
+    </style>
 </head>
 
 <body>
     <noscript>
         This page require to have the javascript enabled.
     </noscript>
-    <app-root></app-root>
+    <app-root>
+        <div class="loader">
+            <div id="bounce">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </app-root>
 </body>
 
 </html>
