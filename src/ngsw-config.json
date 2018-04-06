@@ -22,5 +22,14 @@
                 "/assets/**"
             ]
         }
+    }],
+    "dataGroups": [{
+        "name": "content-items",
+        "urls": [
+            "https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items"
+        ],
+        "cacheConfig": {
+            "strategy": "freshness"
+        }
     }]
 }
