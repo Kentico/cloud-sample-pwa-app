@@ -10,6 +10,7 @@ export class PointOfInterest extends ContentItem {
     public pictures: Fields.AssetsField;
     public description: Fields.RichTextField;
     public latitudeDecimalDegrees: Fields.NumberField;
+    public avatar: Fields.AssetsField;
     public longitudeDecimalDegrees: Fields.NumberField;
     public relatedPointsOfInterest: IContentItem[];
     public title: Fields.TextField;
@@ -43,4 +44,5 @@ export class PointOfInterest extends ContentItem {
             })
         });
     }
+
 }
