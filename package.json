@@ -10,8 +10,8 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "generate-models": "cd src/app/models && kc-generate --ts --projectId 66ab95de-6599-0018-f141-3c9dc08fe797 --definitions",
-        "deploy-surge": "npm run build && surge ./dist https://kentico-cloud-sample-pwa-app.surge.sh",
-        "lighthouse": "lighthouse --chrome-flags=\"--headless\" --quiet https://kentico-cloud-sample-pwa-app.surge.sh"
+        "deploy-surge": "npm run build && surge ./dist https://angular-kentico-cloud-sample-pwa-app.surge.sh",
+        "lighthouse": "lighthouse --chrome-flags=\"--headless\" --quiet https://angular-kentico-cloud-sample-pwa-app.surge.sh"
     },
     "repository": {
         "type": "git",
