@@ -7,3 +7,6 @@ node_modules
 
 # distribution folder
 /dist
+
+# Visual Studio Code
+.vscode/*
