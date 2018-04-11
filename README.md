@@ -21,7 +21,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-These build command are also deined as node scripts
+
+Pre-configured node scripts:
 * `npm run build` will build the application in production mode.
 * `npm run build-dev` will build the application in the development mode.
 
@@ -41,8 +42,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Model generation
 
-Run `npm run generate-models` generate models in ```/src/app/models` using `kentico-cloud-model-generator-utility` [tool](https://github.com/Enngage/KenticoCloudModelGeneratorUtility) project ID is defined in `package.json` in `config.projectId`.
-
+Run `npm run generate-models` generates models in `/src/app/models` using `kentico-cloud-model-generator-utility` [tool](https://github.com/Enngage/KenticoCloudModelGeneratorUtility) project ID is defined in `package.json` in `config.projectId`.
 
 ## Deployment
 
