@@ -24,12 +24,28 @@
         }
     }],
     "dataGroups": [{
-        "name": "content-items",
-        "urls": [
-            "https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items"
-        ],
-        "cacheConfig": {
-            "strategy": "freshness"
+            "name": "content-items",
+            "urls": [
+                "https://deliver.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797/items"
+            ],
+            "cacheConfig": {
+                "maxSize": "30",
+                "maxAge": "6d",
+                "timeout": "2s",
+                "strategy": "freshness"
+            }
+        },
+        {
+            "name": "content-assets",
+            "urls": [
+                "https://assets.kenticocloud.com/66ab95de-6599-0018-f141-3c9dc08fe797"
+            ],
+            "cacheConfig": {
+                "maxSize": "150",
+                "maxAge": "6d",
+                "timeout": "5s",
+                "strategy": "performance"
+            }
         }
-    }]
+    ]
 }

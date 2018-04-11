@@ -11,8 +11,5 @@ deploy:
   project: ./dist/
   domain: https://kentico-cloud-sample-pwa-app.surge.sh 
   skip_cleanup: true
-  on:
-    all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^master|v3-angular$
 after_deploy:
   - npm run lighthouse
