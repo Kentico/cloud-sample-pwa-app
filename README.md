@@ -21,6 +21,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+These build command are also deined as node scripts
+* `npm run build` will build the application in production mode.
+* `npm run build-dev` will build the application in the development mode.
 
 ## Running unit tests
 
@@ -35,6 +38,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Model generation
+
+Run `npm run generate-models` generate models in ```/src/app/models` using `kentico-cloud-model-generator-utility` [tool](https://github.com/Enngage/KenticoCloudModelGeneratorUtility) project ID is defined in `package.json` in `config.projectId`.
+
+
+## Deployment
+
+Deployment is set up by [surge](https://surge.sh/). It is required to register to this service and set two environment properties you receive after registration:
+* SURGE_LOGIN
+* SURGE_TOKEN
+
+Command `npm run surge` deploy the app on the domain specified in `package.json` in `config.deployUrl`.
+
+## Audits using Lighthouse
+
+If you want to perform an audit using [lighthouse](https://developers.google.com/web/tools/lighthouse/) to get the report, there is a prepared set up to generate an HTML report using the url defined in `package.json` in `config.deployUrl`. Audit is created by command `npm run lighthouse`.
 
 ## Contributing
 
