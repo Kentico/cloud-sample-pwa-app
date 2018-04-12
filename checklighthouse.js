@@ -17,10 +17,11 @@ function launchChromeAndRunLighthouse(url, opts, config = null) {
 }
 
 launchChromeAndRunLighthouse(appConfig.config.deployUrl, opts).then(results => {
-    console.log(`Lighthouse report results:\n${JSON.stringify(results)}`);
+    console.log(`Lighthouse report results  :\n${JSON.stringify(results, null, 2)}`);
     if (results.reportCategories.filter((item) => item.id === "pwa").length) {
         const score = results.reportCategories.filter((item) => item.id === "pwa")[0].score
         if (score >= 100) {
+            console.error(`Score is OK: ${score}`);        
             return 0;
         }
         console.error(`Score is lower than 100. It is ${score}`);
