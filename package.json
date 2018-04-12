@@ -4,7 +4,7 @@
     "description": "Travel application featuring various points of interests around you.",
     "version": "1.0.1",
     "config": {
-        "deployUrl": "https://angular-kentico-cloud-sample-pwa-app.surge.sh",
+        "deployUrl": "https://kentico-cloud-sample-pwa-app.surge.sh",
         "projectId": "66ab95de-6599-0018-f141-3c9dc08fe797"
     },
     "scripts": {
@@ -15,8 +15,9 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "generate-models": "cd src/app/models && kc-generate --ts --projectId %npm_package_config_projectId% --definitions",
-        "deploy-surge": "npm run build && surge ./dist %npm_package_deployUrl%",
-        "lighthouse": "lighthouse --chrome-flags=\"--headless\" --quiet  %npm_package_config_deployUrl%"
+        "deploy-surge": "npm run build && surge ./dist %npm_package_config_deployUrl%",
+        "lighthouse": "lighthouse --chrome-flags=\"--headless\" --quiet  %npm_package_config_deployUrl%",
+        "check-pwa-score": "node ./checklighthouse.js"
     },
     "repository": {
         "type": "git",
