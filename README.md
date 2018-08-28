@@ -2,7 +2,6 @@
 [![Build Status](https://api.travis-ci.org/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.org/Kentico/cloud-sample-pwa-app)
 [![Deploy Status](https://img.shields.io/badge/deploy-surge-brightgreen.svg)](http://kentico-cloud-sample-pwa-app.surge.sh)
 [![Forums](https://img.shields.io/badge/chat-on%20forums-orange.svg)](https://forums.kenticocloud.com)
-[![Analytics](https://ga-beacon.appspot.com/UA-69014260-4/Kentico/cloud-sample-pwa-app?pixel)](https://github.com/igrigorik/ga-beacon)
 
 Travel application featuring various points of interests around you.
 
@@ -28,3 +27,5 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/cloud-sample-pwa-app?pixel)
