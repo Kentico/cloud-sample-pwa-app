@@ -1,7 +1,7 @@
 # Pack and Go (cloud-sample-pwa-app)
 [![Build Status](https://api.travis-ci.org/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.org/Kentico/cloud-sample-pwa-app)
 [![Deploy Status](https://img.shields.io/badge/deploy-surge-brightgreen.svg)](http://kentico-cloud-sample-pwa-app.surge.sh)
-[![Forums](https://img.shields.io/badge/chat-on%20forums-orange.svg)](https://forums.kenticocloud.com)
+[![Stack Overflow](https://img.shields.io/stackexchange/stackoverflow/t/kentico%2dcloud.svg?label=Stack%20Overflow)](https://stackoverflow.com/tags/kentico-cloud)
 
 Travel application featuring various points of interests around you.
 
