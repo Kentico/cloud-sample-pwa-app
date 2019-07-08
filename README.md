@@ -1,5 +1,5 @@
 # Pack and Go (cloud-sample-pwa-app)
-[![Build Status](https://api.travis-ci.org/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.org/Kentico/cloud-sample-pwa-app)
+[![Build Status](https://api.travis-ci.com/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.com/Kentico/cloud-sample-pwa-app)
 [![Deploy Status](https://img.shields.io/badge/deploy-surge-brightgreen.svg)](http://kentico-cloud-sample-pwa-app.surge.sh)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
 
