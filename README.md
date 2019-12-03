@@ -1,7 +1,11 @@
-# Pack and Go (cloud-sample-pwa-app)
-[![Build Status](https://api.travis-ci.com/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.com/Kentico/cloud-sample-pwa-app)
+#  ARCHIVED - Pack and Go (cloud-sample-pwa-app)
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/) [![Build Status](https://api.travis-ci.com/Kentico/cloud-sample-pwa-app.svg?branch=master)](https://travis-ci.com/Kentico/cloud-sample-pwa-app)
 [![Deploy Status](https://img.shields.io/badge/deploy-surge-brightgreen.svg)](http://kentico-cloud-sample-pwa-app.surge.sh)
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
+
+> <h2 align="center">:warning:<br><br>Archive Notice</h2>
+> This repository is no longer being maintained for compatibility with the latest version of the product. Examples in this repository refer to the previous product name, <strong>Kentico Cloud</strong>, rather than the new product name, <strong>Kentico Kontent</strong>.
 
 Travel application featuring various points of interests around you.
 
